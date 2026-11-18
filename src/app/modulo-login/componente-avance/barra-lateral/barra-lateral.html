@@ -1,0 +1,21 @@
+<div>
+  <fieldset class="border-2 border-dashed m-4 rounded-[10px] p-2 flex flex-col items-center space-y-4 text-lg"
+            style="border-color: #004080; color: #000000;">
+    <legend class="font-bold text-xl m-2" style="color: #004080;">AVANCES</legend>
+
+    <p class="text-sm font-semibold text-center" style="color: #004080;">{{ nombre }}</p>
+
+    <a *ngFor="let op of opciones"
+       class="cursor-pointer w-full text-center font-bold rounded-2xl py-1"
+       (click)="ir(op.ruta)"
+       [style.background-color]="estaActiva(op.ruta) ? '#004080' : 'transparent'"
+       [style.color]="estaActiva(op.ruta) ? '#ffffff' : '#000000'">
+      {{ op.texto }}
+    </a>
+
+    <a class="cursor-pointer w-full text-center font-bold rounded-2xl py-1 bg-red-500 text-white"
+       (click)="cerrarSesion()">
+      CERRAR SESIÓN
+    </a>
+  </fieldset>
+</div>

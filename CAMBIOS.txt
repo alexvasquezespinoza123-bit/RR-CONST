@@ -1,0 +1,11 @@
+ARCHIVOS NUEVOS:
+  src/app/services/auth.guard.ts
+  src/app/modulo-login/componente-avance/usuarios/usuarios.ts / .html / .css
+ARCHIVOS MODIFICADOS:
+  src/app/app.routes.ts
+  src/app/services/usuario.service.ts
+  src/app/services/avance.service.ts
+  src/app/modulo-login/modulo-login.ts / .html
+  src/app/modulo-login/componente-avance/barra-lateral/barra-lateral.ts / .html
+  src/app/modulo-login/componente-avance/agregar-imagenes/agregar-imagenes.ts / .html
+  src/app/modulo-login/componente-avance/mostrar-imagenes/mostrar-imagenes.ts / .html

@@ -1,0 +1,19 @@
+<header class="site-header">
+  <a class="brand" routerLink="/" aria-label="RR Constructiva, ir al inicio">
+    <span class="brand-mark">RR</span>
+    <span class="brand-copy"><strong>RR CONSTRUCTIVA</strong><small>GROUP S.A.C.</small></span>
+  </a>
+  <nav class="main-nav" aria-label="Navegación principal">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Inicio</a>
+    <a routerLink="/nosotros" routerLinkActive="active">Nosotros</a>
+    <a routerLink="/servicios" routerLinkActive="active">Servicios</a>
+    <a routerLink="/proyectos" routerLinkActive="active">Proyectos</a>
+    <a routerLink="/contacto" routerLinkActive="active">Contacto</a>
+    <a class="nav-login" routerLink="/login" aria-label="Acceso al sistema"><mat-icon>person</mat-icon><span>Acceso</span></a>
+  </nav>
+</header>
+<main><router-outlet></router-outlet></main>
+<footer class="site-footer">
+  <div class="footer-inner"><div><strong>RR Constructiva Group S.A.C.</strong><p>Construimos confianza, desarrollamos futuro.</p></div>
+  <p>© 2026 RR Constructiva Group S.A.C. · Todos los derechos reservados.</p></div>
+</footer>

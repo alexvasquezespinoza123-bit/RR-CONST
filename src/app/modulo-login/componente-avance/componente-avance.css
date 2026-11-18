@@ -1,0 +1,1 @@
+.dashboard-layout{display:grid;grid-template-columns:250px minmax(0,1fr);min-height:72vh;background:#f4f7fa}.dashboard-sidebar{background:#e8f0f7}.dashboard-content{min-width:0;padding:20px}@media(max-width:760px){.dashboard-layout{grid-template-columns:1fr}.dashboard-content{padding:10px}}

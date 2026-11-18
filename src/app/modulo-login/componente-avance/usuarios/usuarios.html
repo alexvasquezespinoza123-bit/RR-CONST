@@ -1,0 +1,70 @@
+<div class="m-4 space-y-6">
+  <!-- FORMULARIO -->
+  <fieldset class="border-2 border-[#004080] rounded-lg p-6">
+    <legend class="text-2xl font-bold px-2 text-[#004080]">
+      {{ editando ? 'EDITAR USUARIO' : 'NUEVO USUARIO' }}
+    </legend>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+      <div class="flex flex-col">
+        <label class="text-sm font-semibold mb-1 text-gray-700">NOMBRE:</label>
+        <input type="text" [(ngModel)]="form.nombreusuario" class="border border-gray-300 rounded-md px-3 py-2">
+      </div>
+      <div class="flex flex-col">
+        <label class="text-sm font-semibold mb-1 text-gray-700">APELLIDOS:</label>
+        <input type="text" [(ngModel)]="form.apellidosusuario" class="border border-gray-300 rounded-md px-3 py-2">
+      </div>
+      <div class="flex flex-col">
+        <label class="text-sm font-semibold mb-1 text-gray-700">USUARIO (CORREO):</label>
+        <input type="text" [(ngModel)]="form.nombrelogin" class="border border-gray-300 rounded-md px-3 py-2">
+      </div>
+      <div class="flex flex-col">
+        <label class="text-sm font-semibold mb-1 text-gray-700">CONTRASEÑA:</label>
+        <input type="password" [(ngModel)]="form.contrasena" class="border border-gray-300 rounded-md px-3 py-2">
+      </div>
+      <div class="flex flex-col">
+        <label class="text-sm font-semibold mb-1 text-gray-700">ROL:</label>
+        <select [(ngModel)]="form.rol" class="border border-gray-300 rounded-md px-3 py-2 bg-white">
+          <option value="admin">Administrador</option>
+          <option value="user">Usuario</option>
+        </select>
+      </div>
+    </div>
+    <div class="flex justify-end items-center gap-3 mt-4">
+      <p *ngIf="mensaje" class="font-semibold"
+         [ngClass]="{ 'text-green-600': tipoMensaje === 'exito', 'text-red-600': tipoMensaje === 'error' }">
+        {{ mensaje }}
+      </p>
+      <button *ngIf="editando" (click)="cancelar()" class="bg-gray-400 text-white font-bold px-4 py-2 rounded-lg cursor-pointer">CANCELAR</button>
+      <button (click)="guardar()" class="bg-green-500 text-white font-bold px-4 py-2 rounded-lg cursor-pointer">
+        {{ editando ? 'ACTUALIZAR' : 'CREAR' }}
+      </button>
+    </div>
+  </fieldset>
+
+  <!-- LISTA -->
+  <div class="overflow-x-auto">
+    <table class="w-full border-2 border-[#004080] bg-white text-left">
+      <thead class="bg-[#004080] text-white">
+        <tr>
+          <th class="p-2">ID</th>
+          <th class="p-2">NOMBRE</th>
+          <th class="p-2">USUARIO</th>
+          <th class="p-2">ROL</th>
+          <th class="p-2">ACCIONES</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let u of lista" class="border-t">
+          <td class="p-2">{{ u.idusuario }}</td>
+          <td class="p-2">{{ u.nombreusuario }} {{ u.apellidosusuario }}</td>
+          <td class="p-2">{{ u.nombrelogin }}</td>
+          <td class="p-2">{{ u.rol }}</td>
+          <td class="p-2 space-x-2">
+            <button (click)="editar(u)" class="bg-yellow-500 text-white font-bold px-3 py-1 rounded cursor-pointer">EDITAR</button>
+            <button (click)="eliminar(u)" class="bg-red-500 text-white font-bold px-3 py-1 rounded cursor-pointer">ELIMINAR</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
